@@ -16,6 +16,10 @@ class Application < Sinatra::Base
     also_reload 'lib/artist_repository'
   end
 
+  get '/' do
+    return erb(:homepage)
+  end
+
 post '/albums' do
   title = params[:title]
   release_year = params[:release_year]
